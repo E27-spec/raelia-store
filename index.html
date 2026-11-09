@@ -1,111 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raelia Store</title>
 
 <style>
+*{
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f8f6fc;
     margin:0;
-    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#f7f3fb;
 }
 
-.header{
+header{
+    background:#7e22ce;
+    color:white;
     text-align:center;
-    margin-bottom:30px;
+    padding:30px;
 }
 
-.header h1{
-    color:#6d28d9;
+header h1{
+    margin:0;
+}
+
+.cart-bar{
+    background:white;
+    padding:15px;
+    position:sticky;
+    top:0;
+    font-weight:bold;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    z-index:10;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
 }
 
 .product{
     background:white;
-    max-width:400px;
-    margin:auto;
-    padding:20px;
     border-radius:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.product-image{
+    height:180px;
+    background:linear-gradient(135deg,#e9d5ff,#c084fc);
+    border-radius:12px;
+    margin-bottom:15px;
 }
 
 .price{
+    color:#7e22ce;
     font-size:24px;
     font-weight:bold;
-    color:#6d28d9;
 }
 
-.quantity{
+input{
     width:70px;
     padding:8px;
     margin-top:10px;
 }
 
 button{
-    background:#6d28d9;
+    width:100%;
+    background:#7e22ce;
     color:white;
     border:none;
-    padding:12px 20px;
+    padding:12px;
     border-radius:8px;
+    margin-top:10px;
     cursor:pointer;
-    margin-top:15px;
-    width:100%;
 }
 
-#cart{
-    margin-top:20px;
-    font-weight:bold;
+button:hover{
+    background:#6b21a8;
+}
+
+.cart-summary{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.checkout{
+    background:#16a34a;
+}
+
+.checkout:hover{
+    background:#15803d;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="header">
-    <h1>Raelia Beauty</h1>
-    <p>Luxury Hair & Beauty Collection</p>
-</div>
-
-<div class="product">
-    <h2>Raelia Silk Serum</h2>
-
-    <div class="price">$24.99</div>
-
-    <p>Adds shine, softness, and helps reduce frizz.</p>
-
-    <label>Quantity:</label><br>
-
-    <input
-        id="qty"
-        class="quantity"
-        type="number"
-        value="1"
-        min="1">
-
-    <button onclick="addCart()">
-        Add To Cart
-    </button>
-
-    <div id="cart">
-        Cart: 0 item(s)
-    </div>
-</div>
-
-<script>
-let cart = 0;
-
-function addCart(){
-    let qty =
-        parseInt(document.getElementById("qty").value);
-
-    cart += qty;
-
-    document.getElementById("cart").innerHTML =
-        "Cart: " + cart + " item(s)";
-}
-</script>
-
-</body>
-</html>
+<header>
+    <h1>Raelia Beauty
